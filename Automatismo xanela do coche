@@ -5,7 +5,7 @@
 #define pulsador 7
 
 bool estado = 0;
-int contador = 100;
+int contador = 100; // Contador para impulsos del motor
 void setup()
 {
   pinMode(motorArriba, OUTPUT);
@@ -16,7 +16,7 @@ void setup()
 }
 
 void loop()
-{
+{ // Lectura del pulsador
   if(digitalRead(pulsador));
   {
     estado = !estado;
@@ -25,13 +25,13 @@ void loop()
     {
       delay(20);
     }
-  }
+  } // Fin de lectura del pulsador
   Serial.print("Valor contador; ");
   Serial.println(contador);
   Serial.print(" | Estado: ");
   Serial.println(estado);
-  
-  if(contador > 0)
+  // Accionamiento de los motores
+  if(contador > 0) // Cuenta numero de impulsos del motor
   {
     if(estado == 0)
     {
